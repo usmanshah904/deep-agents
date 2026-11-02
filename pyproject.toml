@@ -1,0 +1,27 @@
+[project]
+name = "gcp-sre-agent-deepagents"
+version = "0.3.0"
+description = "Google Cloud SRE agent (costs, monitoring, logs, approved changes) built with LangChain Deep Agents and Gemini"
+readme = "README.md"
+requires-python = ">=3.12"
+# Main packages. requirements.txt pins every package to the tested versions.
+dependencies = [
+    "deepagents==0.7.29",
+    "langchain==1.4.6",
+    "langchain-google-genai==4.4.2",
+    "langchain-mcp-adapters==0.3.2",
+    "langgraph==1.2.16",
+    "langgraph-checkpoint-sqlite==3.1.2",
+    "mcp==1.30.0",
+    "httpx==0.28.1",
+    "fastapi==0.158.0",
+    "uvicorn==0.54.0",
+    "python-dotenv==1.2.4",
+    "PyYAML==6.0.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

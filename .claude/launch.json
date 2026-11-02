@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "deep-agents-dashboard",
+      "runtimeExecutable": "C:/Users/hp/Desktop/SRE Prototype/deep-agents/.venv/Scripts/python.exe",
+      "runtimeArgs": [
+        "dashboard/app.py"
+      ],
+      "port": 8061,
+      "env": {
+        "DASHBOARD_PORT": "8061"
+      },
+      "autoPort": false
+    }
+  ]
+}

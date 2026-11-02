@@ -1,0 +1,16 @@
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Local run data: chats, change history, server log
+data/
+mcp_server.log
+chat_history.sqlite*
+chat_links.json
+
+# Zipped copies of the new-agent skill (the skill itself is in .claude/skills)
+*.zip

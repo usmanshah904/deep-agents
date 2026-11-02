@@ -1,0 +1,18 @@
+services:
+  floci-gcp:
+    image: floci/floci-gcp:latest
+    container_name: floci-gcp
+    ports:
+      - "4588:4588"
+    restart: unless-stopped
+    volumes:
+      # Lets floci start its BigQuery SQL engine (floci-duck) as a sidecar container.
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      FLOCI_GCP_HOSTNAME: floci-gcp
+      FLOCI_GCP_BASE_URL: http://floci-gcp:4588
+      FLOCI_GCP_SERVICES_DOCKER_NETWORK: floci-net
+
+networks:
+  default:
+    name: floci-net
