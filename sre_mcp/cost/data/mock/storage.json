@@ -1,0 +1,12 @@
+{
+  "note": "Mock Cloud Storage cost per bucket for 2026-09. Costs add up to the Cloud Storage total in billing.json ($1,050: prod $650, analytics $400). cold_data_pct = share of current data not read for 30+ days; cold_data_last_read_days = days since that cold data was last read; deletable_gb = data the owner's policy says can go (for example temp files older than 30 days). Prices are USD per GB per month, regional us-central1.",
+  "month": "2026-09",
+  "prices_per_gb": {"STANDARD": 0.020, "NEARLINE": 0.010, "COLDLINE": 0.004, "ARCHIVE": 0.0012},
+  "buckets": [
+    {"name": "prod-app-assets", "project": "prod", "purpose": "app assets", "storage_class": "STANDARD", "location": "us-central1", "current_gb": 5000, "noncurrent_gb": 0, "storage_cost": 100, "operations_cost": 60, "egress_cost": 140, "cost": 300, "cold_data_pct": 5, "cold_data_last_read_days": 20, "deletable_gb": 0, "versioning": false, "lifecycle_rules": []},
+    {"name": "prod-db-backups", "project": "prod", "purpose": "database backups", "storage_class": "STANDARD", "location": "us-central1", "current_gb": 10000, "noncurrent_gb": 0, "storage_cost": 200, "operations_cost": 10, "egress_cost": 0, "cost": 210, "cold_data_pct": 80, "cold_data_last_read_days": 200, "deletable_gb": 0, "versioning": false, "lifecycle_rules": []},
+    {"name": "prod-logs-archive", "project": "prod", "purpose": "log archive", "storage_class": "STANDARD", "location": "us-central1", "current_gb": 6500, "noncurrent_gb": 0, "storage_cost": 130, "operations_cost": 10, "egress_cost": 0, "cost": 140, "cold_data_pct": 95, "cold_data_last_read_days": 400, "deletable_gb": 0, "versioning": false, "lifecycle_rules": []},
+    {"name": "analytics-raw-data", "project": "analytics", "purpose": "raw data lake", "storage_class": "STANDARD", "location": "us-central1", "current_gb": 8000, "noncurrent_gb": 4000, "storage_cost": 240, "operations_cost": 40, "egress_cost": 0, "cost": 280, "cold_data_pct": 50, "cold_data_last_read_days": 60, "deletable_gb": 0, "versioning": true, "lifecycle_rules": []},
+    {"name": "analytics-tmp", "project": "analytics", "purpose": "temporary job files", "storage_class": "STANDARD", "location": "us-central1", "current_gb": 5000, "noncurrent_gb": 0, "storage_cost": 100, "operations_cost": 20, "egress_cost": 0, "cost": 120, "cold_data_pct": 0, "cold_data_last_read_days": 0, "deletable_gb": 4500, "versioning": false, "lifecycle_rules": []}
+  ]
+}

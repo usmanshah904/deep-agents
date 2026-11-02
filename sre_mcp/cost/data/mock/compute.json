@@ -1,0 +1,20 @@
+{
+  "note": "Mock Compute Engine cost per VM and per unused resource for 2026-09. Utilization is the monthly average. Costs are after automatic sustained use discounts and add up to the Compute Engine total in billing.json ($2,400: prod $1,700, staging $700).",
+  "month": "2026-09",
+  "instances": [
+    {"name": "web-vm-1", "project": "prod", "env": "prod", "zone": "us-central1-a", "machine_type": "n2-standard-8", "cost": 450, "cpu_util_pct": 22, "mem_util_pct": 35, "uptime_pct": 100, "batch": false, "cud_covered": false},
+    {"name": "web-vm-2", "project": "prod", "env": "prod", "zone": "us-central1-b", "machine_type": "n2-standard-8", "cost": 450, "cpu_util_pct": 25, "mem_util_pct": 38, "uptime_pct": 100, "batch": false, "cud_covered": false},
+    {"name": "report-worker", "project": "prod", "env": "prod", "zone": "us-central1-a", "machine_type": "n2-highmem-8", "cost": 300, "cpu_util_pct": 30, "mem_util_pct": 45, "uptime_pct": 40, "batch": true, "cud_covered": false},
+    {"name": "db-proxy", "project": "prod", "env": "prod", "zone": "us-central1-a", "machine_type": "e2-standard-4", "cost": 200, "cpu_util_pct": 55, "mem_util_pct": 62, "uptime_pct": 100, "batch": false, "cud_covered": true},
+    {"name": "legacy-ftp", "project": "prod", "env": "prod", "zone": "us-central1-c", "machine_type": "e2-standard-2", "cost": 120, "cpu_util_pct": 1, "mem_util_pct": 6, "uptime_pct": 100, "batch": false, "cud_covered": false},
+    {"name": "staging-app", "project": "staging", "env": "non-prod", "zone": "us-central1-a", "machine_type": "n2-standard-4", "cost": 250, "cpu_util_pct": 8, "mem_util_pct": 15, "uptime_pct": 100, "batch": false, "cud_covered": false},
+    {"name": "staging-db", "project": "staging", "env": "non-prod", "zone": "us-central1-a", "machine_type": "e2-standard-4", "cost": 200, "cpu_util_pct": 12, "mem_util_pct": 30, "uptime_pct": 100, "batch": false, "cud_covered": false},
+    {"name": "ci-runner", "project": "staging", "env": "non-prod", "zone": "us-central1-b", "machine_type": "n2-standard-8", "cost": 200, "cpu_util_pct": 45, "mem_util_pct": 50, "uptime_pct": 50, "batch": true, "cud_covered": false}
+  ],
+  "unused_resources": [
+    {"type": "disk", "name": "old-db-disk", "project": "prod", "detail": "pd-ssd, 590 GB, unattached", "age_days": 90, "cost": 100},
+    {"type": "snapshot", "name": "web-vm-snapshots-2025", "project": "prod", "detail": "1,000 GB of snapshots older than 1 year", "age_days": 400, "cost": 50},
+    {"type": "static_ip", "name": "unused-external-ips", "project": "prod", "detail": "4 reserved external IPs not attached to any VM", "age_days": 120, "cost": 30},
+    {"type": "disk", "name": "staging-old-boot", "project": "staging", "detail": "pd-balanced, 500 GB, unattached", "age_days": 60, "cost": 50}
+  ]
+}

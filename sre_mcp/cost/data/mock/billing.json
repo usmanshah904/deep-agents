@@ -1,0 +1,26 @@
+{
+  "note": "Mock monthly cost per service and project. Service names as in the Cloud Billing export. Same totals as the sample billing export table (seed/seed_billing.py).",
+  "records": [
+    {"month": "2026-09", "service": "Kubernetes Engine", "project": "prod", "cost": 4300},
+    {"month": "2026-09", "service": "Kubernetes Engine", "project": "staging", "cost": 900},
+    {"month": "2026-09", "service": "BigQuery", "project": "analytics", "cost": 2700},
+    {"month": "2026-09", "service": "BigQuery", "project": "prod", "cost": 400},
+    {"month": "2026-09", "service": "Compute Engine", "project": "prod", "cost": 1700},
+    {"month": "2026-09", "service": "Compute Engine", "project": "staging", "cost": 700},
+    {"month": "2026-09", "service": "Cloud Storage", "project": "prod", "cost": 650},
+    {"month": "2026-09", "service": "Cloud Storage", "project": "analytics", "cost": 400},
+    {"month": "2026-09", "service": "Cloud SQL", "project": "prod", "cost": 500},
+    {"month": "2026-09", "service": "Cloud Logging", "project": "staging", "cost": 200},
+
+    {"month": "2026-08", "service": "Kubernetes Engine", "project": "prod", "cost": 3850},
+    {"month": "2026-08", "service": "Kubernetes Engine", "project": "staging", "cost": 750},
+    {"month": "2026-08", "service": "BigQuery", "project": "analytics", "cost": 2400},
+    {"month": "2026-08", "service": "BigQuery", "project": "prod", "cost": 350},
+    {"month": "2026-08", "service": "Compute Engine", "project": "prod", "cost": 1700},
+    {"month": "2026-08", "service": "Compute Engine", "project": "staging", "cost": 700},
+    {"month": "2026-08", "service": "Cloud Storage", "project": "prod", "cost": 650},
+    {"month": "2026-08", "service": "Cloud Storage", "project": "analytics", "cost": 400},
+    {"month": "2026-08", "service": "Cloud SQL", "project": "prod", "cost": 485},
+    {"month": "2026-08", "service": "Cloud Logging", "project": "staging", "cost": 200}
+  ]
+}

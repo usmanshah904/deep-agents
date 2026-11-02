@@ -1,0 +1,15 @@
+{
+  "note": "Mock GKE cost per workload for 2026-09 plus requested vs used resources. Costs add up to the GKE total in billing.json ($5,200).",
+  "month": "2026-09",
+  "workloads": [
+    {"cluster": "prod-cluster", "cluster_mode": "Standard", "namespace": "checkout", "workload": "payments-api", "cost": 1100, "batch": false, "cpu_requested": 40, "cpu_used": 12, "mem_requested_gb": 80, "mem_used_gb": 30},
+    {"cluster": "prod-cluster", "cluster_mode": "Standard", "namespace": "checkout", "workload": "cart-service", "cost": 600, "batch": false, "cpu_requested": 20, "cpu_used": 9, "mem_requested_gb": 40, "mem_used_gb": 22},
+    {"cluster": "prod-cluster", "cluster_mode": "Standard", "namespace": "search", "workload": "search-indexer", "cost": 900, "batch": false, "cpu_requested": 36, "cpu_used": 10, "mem_requested_gb": 120, "mem_used_gb": 45},
+    {"cluster": "prod-cluster", "cluster_mode": "Standard", "namespace": "web", "workload": "frontend", "cost": 700, "batch": false, "cpu_requested": 24, "cpu_used": 15, "mem_requested_gb": 48, "mem_used_gb": 30},
+    {"cluster": "prod-cluster", "cluster_mode": "Standard", "namespace": "data", "workload": "batch-etl", "cost": 500, "batch": true, "cpu_requested": 30, "cpu_used": 14, "mem_requested_gb": 64, "mem_used_gb": 28},
+    {"cluster": "prod-cluster", "cluster_mode": "Standard", "namespace": "kube-system", "workload": "system-components", "cost": 500, "batch": false, "cpu_requested": 20, "cpu_used": 14, "mem_requested_gb": 40, "mem_used_gb": 28},
+    {"cluster": "staging-cluster", "cluster_mode": "Autopilot", "namespace": "staging", "workload": "web-staging", "cost": 400, "batch": false, "cpu_requested": 16, "cpu_used": 2, "mem_requested_gb": 32, "mem_used_gb": 5},
+    {"cluster": "staging-cluster", "cluster_mode": "Autopilot", "namespace": "staging", "workload": "api-staging", "cost": 300, "batch": false, "cpu_requested": 12, "cpu_used": 3, "mem_requested_gb": 24, "mem_used_gb": 7},
+    {"cluster": "staging-cluster", "cluster_mode": "Autopilot", "namespace": "ci", "workload": "test-runner", "cost": 200, "batch": true, "cpu_requested": 8, "cpu_used": 1, "mem_requested_gb": 16, "mem_used_gb": 2}
+  ]
+}

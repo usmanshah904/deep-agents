@@ -7,7 +7,7 @@ __pycache__/
 .pytest_cache/
 
 # Local run data: chats, change history, server log
-data/
+/data/
 mcp_server.log
 chat_history.sqlite*
 chat_links.json

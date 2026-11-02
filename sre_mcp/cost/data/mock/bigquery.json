@@ -1,0 +1,13 @@
+{
+  "note": "Mock most expensive BigQuery queries for 2026-09 (on-demand pricing, $6.25 per TB). est_saving_pct is the expected cost reduction once the fix is applied.",
+  "month": "2026-09",
+  "pricing_model": "on-demand",
+  "price_per_tb": 6.25,
+  "queries": [
+    {"query_id": "q1", "project": "analytics", "user": "svc-etl", "table": "events.raw_clicks", "tb_billed": 120, "cost": 750, "issue": "Full scan of an unpartitioned table with no date filter", "fix": "Partition the table by date and filter on the partition column", "est_saving_pct": 80},
+    {"query_id": "q2", "project": "analytics", "user": "data-science", "table": "analytics.sessions", "tb_billed": 80, "cost": 500, "issue": "SELECT * on a wide table", "fix": "Select only the needed columns and cluster the table", "est_saving_pct": 50},
+    {"query_id": "q3", "project": "analytics", "user": "dashboard-bot", "table": "analytics.daily_kpis", "tb_billed": 64, "cost": 400, "issue": "Same dashboard query re-run about 200 times a day", "fix": "Use a materialized view or cached results", "est_saving_pct": 90},
+    {"query_id": "q4", "project": "prod", "user": "svc-reports", "table": "prod.orders", "tb_billed": 40, "cost": 250, "issue": "Join without a proper key causes row explosion", "fix": "Add the missing join condition and pre-filter both sides", "est_saving_pct": 60},
+    {"query_id": "q5", "project": "analytics", "user": "svc-audit", "table": "logs.audit", "tb_billed": 24, "cost": 150, "issue": "No partition filter on audit logs", "fix": "Add a date filter on the partition column", "est_saving_pct": 70}
+  ]
+}
